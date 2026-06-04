@@ -66,3 +66,15 @@
   display: inline-block;
   background-color: transparent;
 }
+
+.status {
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.error {
+  margin: 0;
+  font-size: 16px;
+  color: #b42318;
+}
