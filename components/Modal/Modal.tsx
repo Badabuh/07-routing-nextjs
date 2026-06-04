@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 
 interface ModalProps {
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export default function Modal({ children, onClose }: ModalProps) {
@@ -16,7 +16,7 @@ export default function Modal({ children, onClose }: ModalProps) {
 
     const handleEscape = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
+        onClose?.();
       }
     };
 

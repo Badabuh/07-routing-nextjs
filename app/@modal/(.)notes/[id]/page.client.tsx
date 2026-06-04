@@ -3,7 +3,7 @@
 import { getNoteById } from "@/lib/api";
 import css from "./NotePreview.module.css";
 import { useQuery } from "@tanstack/react-query";
-import NoteModal from "../../../../components/DetailsNoteModal/NotePreview";
+import Modal from "../../../../components/Modal/Modal";
 import { useRouter } from "next/navigation";
 
 export default function NotePreview({ id }: { id: string }) {
@@ -18,13 +18,13 @@ export default function NotePreview({ id }: { id: string }) {
   });
 
   return (
-    <NoteModal onClose={onClose}>
+    <Modal onClose={onClose}>
       <div className={css.container}>
         {note && (
           <div className={css.item}>
             <div className={css.header}>
               <h2>{note.title}</h2>
-              <button onClick={onClose} className={css.closeButton}>
+              <button onClick={onClose} className={css.backBtn}>
                 X
               </button>
             </div>
@@ -34,6 +34,6 @@ export default function NotePreview({ id }: { id: string }) {
           </div>
         )}
       </div>
-    </NoteModal>
+    </Modal>
   );
 }

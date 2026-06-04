@@ -7,9 +7,7 @@ import { getNoteById } from "../../../../lib/api";
 import NotePreview from "./page.client";
 
 interface NotesModalProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function NotesModal({ params }: NotesModalProps) {
@@ -23,7 +21,7 @@ export default async function NotesModal({ params }: NotesModalProps) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-        <NotePreview id={id} />
+      <NotePreview id={id} />
     </HydrationBoundary>
   );
 }
