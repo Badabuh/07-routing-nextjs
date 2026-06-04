@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import NoteList from "../NoteList/NoteList";
 import { keepPreviousData } from "@tanstack/react-query";
-import { NoteTag } from "@/types/note";
+import type { NoteTag } from "@/types/note";
 
 const NOTES_PER_PAGE = 12;
 
